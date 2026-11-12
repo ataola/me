@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="auto"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>计算机小天使 · 海报</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 460 460'%3E%3Cg transform='rotate(12 230 230)' fill='none' stroke-width='32' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M95 120 L205 120 L95 235 L205 235' stroke='%23FF6666'/%3E%3Cpath d='M255 120 L255 235 M255 235 Q255 265 225 265' stroke='%23FDF003'/%3E%3Cpath d='M300 120 L410 120 M355 120 L355 265' stroke='%23006699'/%3E%3C/g%3E%3C/svg%3E">
+<meta name="robots" content="index,follow">
+<meta name="description" content="计算机小天使作品海报：B站技术视频数据一览，可保存分享。">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ZJT · 计算机小天使">
+<meta property="og:title" content="计算机小天使 · 作品海报">
+<meta property="og:description" content="B站技术视频作品数据一览，扫码直达。">
+<meta property="og:image" content="https://me.zhengjiangtao.cn/assets/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://me.zhengjiangtao.cn/poster.html">
+
+<style>
+  /* 报纸风令牌（与博客同源） */
+  :root{
+    --paper:#f6f2e8; --ink:#17140f; --ink-2:#3a342b; --muted:#6d6557;
+    --rule:#d9d1bf;
+    --accent:#9c1f16; --seal:#a8322a;
+    --serif:'Songti SC','STSong','SimSun','Noto Serif CJK SC','Noto Serif SC',Georgia,serif;
+    --sans:'PingFang SC','HarmonyOS Sans','Hiragino Sans GB','Microsoft YaHei',system-ui,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){:root{
+    --paper:#14120e; --ink:#f2ecdd; --ink-2:#d3c9b6; --muted:#9c9180;
+    --rule:#322c24; --accent:#dd6a58; --seal:#d0604f;
+  }}
+  html[data-theme=light]{--paper:#f6f2e8;--ink:#17140f;--ink-2:#3a342b;--muted:#6d6557;
+    --rule:#d9d1bf;--accent:#9c1f16;--seal:#a8322a;}
+  html[data-theme=dark]{--paper:#14120e;--ink:#f2ecdd;--ink-2:#d3c9b6;--muted:#9c9180;
+    --rule:#322c24;--accent:#dd6a58;--seal:#d0604f;}
+
+  *,*::before,*::after{box-sizing:border-box}
+  body{margin:0;background:#26231d;font-family:var(--sans);
+    display:flex;flex-direction:column;align-items:center;gap:18px;padding:22px 16px 52px;min-height:100vh}
+
+  .toolbar{display:flex;gap:10px;align-items:center;color:#d8d2c4;font-size:13px;flex-wrap:wrap;justify-content:center}
+  .toolbar button,.toolbar a{background:#3a352c;border:1px solid #524a3d;color:#e8e2d4;padding:8px 16px;
+    cursor:pointer;font-size:13px;font-family:var(--sans);letter-spacing:.06em;text-decoration:none}
+  .toolbar button:hover,.toolbar a:hover{background:#4a4337;border-color:#6b6153}
+  .toolbar .hint{opacity:.7}
+
+  /* ============ 海报 9:16 ============ */
+  .poster{
+    width:min(420px,100%);aspect-ratio:9/16;
+    background:var(--paper);color:var(--ink);font-family:var(--serif);
+    display:flex;flex-direction:column;position:relative;overflow:hidden;
+    box-shadow:0 26px 70px rgba(0,0,0,.55);
+  }
+
+  /* ---- 上半：图像主导 ---- */
+  .hero{position:relative;height:58%;flex:none;overflow:hidden}
+  .hero img{
+    width:100%;height:100%;object-fit:cover;object-position:center 28%;display:block;
+    /* 与报纸底色统一：降饱和 + 微暖 */
+    filter:saturate(.82) contrast(1.04) sepia(.1);
+    transform:scale(1.02);
+  }
+  /* 顶部压暗，给白色报头留可读性 */
+  .hero .scrim-top{position:absolute;inset:0 0 auto 0;height:34%;
+    background:linear-gradient(to bottom,rgba(12,10,8,.62),rgba(12,10,8,0))}
+  /* 底部融入纸色，避免一条硬边 */
+  .hero .fade{position:absolute;inset:auto 0 0 0;height:30%;
+    background:linear-gradient(to top,var(--paper) 0%,color-mix(in srgb,var(--paper) 40%,transparent) 55%,transparent 100%)}
+  /* 深色下纸色太黑，渐隐会像把图切断：干脆不要渐隐，图片作为一个完整的块 */
+  @media (prefers-color-scheme:dark){.hero .fade{display:none}}
+  html[data-theme=dark] .hero .fade{display:none}
+  html[data-theme=light] .hero .fade{display:block}
+
+  /* 报头（叠在图上） */
+  .mast{position:absolute;left:20px;right:20px;top:16px;display:flex;align-items:center;
+    justify-content:space-between;gap:10px;color:#fff}
+  .mast .brand{display:flex;align-items:center;gap:8px;min-width:0}
+  .mast svg{width:26px;height:26px;flex:none;filter:drop-shadow(0 1px 2px rgba(0,0,0,.5))}
+  .mast .bn{font-size:11.5px;font-weight:700;letter-spacing:.12em;line-height:1.3;
+    text-shadow:0 1px 3px rgba(0,0,0,.55)}
+  .mast .bs{font-family:var(--sans);font-size:8px;letter-spacing:.2em;opacity:.82;line-height:1.4}
+  .mast .date{font-family:var(--sans);font-size:8.5px;letter-spacing:.16em;opacity:.85;
+    text-shadow:0 1px 3px rgba(0,0,0,.5)}
+
+  /* ---- 下半：文字区 ---- */
+  .body{flex:1;display:flex;flex-direction:column;padding:18px 24px 18px;position:relative}
+
+  .kicker{font-family:var(--sans);font-size:9.5px;letter-spacing:.34em;color:var(--accent);
+    text-transform:uppercase;margin-bottom:8px}
+
+  h2{margin:0;font-size:clamp(21px,5.6vw,26px);line-height:1.32;letter-spacing:-.015em;
+    font-weight:700;text-wrap:balance;padding-right:26px}
+
+  /* 主数字：与标题拉开极端对比 */
+  .stat{display:flex;align-items:flex-end;gap:12px;margin-top:18px}
+  .stat .n{font-size:clamp(66px,20vw,94px);line-height:.82;font-weight:700;letter-spacing:-.045em;
+    color:var(--accent);font-variant-numeric:tabular-nums}
+  .stat .n .u{font-size:.26em;font-weight:600;letter-spacing:0;margin-left:2px;vertical-align:.42em}
+  .stat .side{padding-bottom:6px;font-family:var(--sans);font-size:9.5px;letter-spacing:.1em;
+    color:var(--muted);line-height:1.75}
+  .stat .side b{color:var(--ink-2);font-weight:600}
+
+  /* 三个次级数：一行，点分隔，不做表格 */
+  .row3{display:flex;gap:14px;margin-top:12px;font-family:var(--sans);font-size:11px;color:var(--muted);
+    letter-spacing:.06em}
+  .row3 b{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums;margin-left:3px}
+
+  /* 报尾 */
+  .foot{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;
+    padding-top:14px;margin-top:auto;border-top:1px solid var(--rule)}
+  .foot .l{font-family:var(--sans);font-size:9px;letter-spacing:.1em;color:var(--muted);line-height:1.7}
+  .foot .l b{color:var(--ink-2);font-weight:600}
+  .seal{flex:none;width:46px;height:46px;border:1.5px solid var(--seal);color:var(--seal);
+    display:grid;place-items:center;text-align:center;font-size:8.5px;line-height:1.12;
+    font-weight:700;transform:rotate(-6deg);opacity:.92;padding:3px}
+
+  /* 竖排落款（古风，系统衬线）：在文字区右上角 */
+  .sign{position:absolute;right:22px;top:4px;writing-mode:vertical-rl;
+    font-family:var(--serif);font-size:11px;letter-spacing:.2em;color:var(--accent);
+    line-height:1.15}
+
+
+  @media print{
+    body{background:#fff;padding:0;gap:0}
+    .toolbar{display:none}
+    .poster{box-shadow:none;width:100%;aspect-ratio:auto;min-height:100vh}
+  }
+  @media (max-width:420px){
+    .body{padding:0 18px 16px}
+    h2{font-size:19px}
+    .stat .n{font-size:64px}
+  }
+</style>
+
+<link rel="canonical" href="https://me.zhengjiangtao.cn/poster.html">
+</head><body>
+
+<div class="toolbar">
+  <button onclick="window.print()">🖨 打印 / 存 PDF</button>
+  <a href="index.html">← 看完整版</a>
+  <span class="hint">朋友圈分享用 · 截图或存 PDF</span>
+</div>
+
+<div class="poster" id="poster">
+
+  <!-- 上半：封面图主导 -->
+  <div class="hero">
+    <img id="pcover" src="assets/cover.webp" alt="">
+    <div class="scrim-top"></div>
+    <div class="fade"></div>
+    <div class="mast">
+      <div class="brand">
+        <svg viewBox="0 0 460 460" xmlns="http://www.w3.org/2000/svg" role="img">
+          <title>zjt 风车标志</title>
+          <g>
+            <g transform="rotate(-90 230 230)">
+              <path d="M230 230 L230 80" stroke="#FF6666" stroke-width="52" stroke-linecap="round" fill="none"/>
+              <path d="M230 80 L325 45" stroke="#FF6666" stroke-width="52" stroke-linecap="round" fill="none"/>
+            </g>
+            <g transform="rotate(30 230 230)">
+              <path d="M230 230 L230 80" stroke="#FDF003" stroke-width="52" stroke-linecap="round" fill="none"/>
+              <path d="M230 80 L325 45" stroke="#FDF003" stroke-width="52" stroke-linecap="round" fill="none"/>
+            </g>
+            <g transform="rotate(150 230 230)">
+              <path d="M230 230 L230 80" stroke="#006699" stroke-width="52" stroke-linecap="round" fill="none"/>
+              <path d="M230 80 L325 45" stroke="#006699" stroke-width="52" stroke-linecap="round" fill="none"/>
+            </g>
+          </g>
+        </svg>
+        <span>
+          <div class="bn">江涛の技术专栏</div>
+          <div class="bs">作品与课程</div>
+        </span>
+      </div>
+      <div class="date" id="pdate"></div>
+    </div>
+  </div>
+
+  <!-- 下半：文字区 -->
+  <div class="body">
+    <div class="kicker">头版头条</div>
+    <h2 id="ptitle">解决windows下任务栏消失问题</h2>
+
+    <div class="stat">
+      <div class="n"><span id="pbig">16.8</span><span class="u" id="punit">万</span></div>
+      <div class="side">
+        累计播放<br>
+        互动率 <b id="pir">4.46%</b>
+      </div>
+    </div>
+
+    <div class="row3" id="prow"></div>
+
+    <div class="foot">
+      <div class="l">
+        <b>B站技术视频</b><br>
+        <span id="pfoot"></span>
+      </div>
+      <div class="seal">计算机<br>小天使</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const fmt=n=>n>=100000000?(n/100000000).toFixed(1):(n>=10000?(n/10000).toFixed(1):String(n));
+const unit=n=>n>=100000000?'亿':(n>=10000?'万':'');
+const d2=n=>n>=10000?(n/10000).toFixed(1)+'万':String(n);
+document.getElementById('pdate').textContent=new Date().toLocaleDateString('zh-CN',{year:'numeric',month:'2-digit',day:'2-digit'}).replace(/\//g,'.');
+
+fetch('data/creator.json?_='+Date.now()).then(r=>r.json()).then(d=>{
+  const v=d.videos[0],s=v.stat;
+  const total=d.videos.reduce((a,x)=>a+x.stat.view,0);
+  document.getElementById('pbig').textContent=fmt(total);
+  document.getElementById('punit').textContent=unit(total);
+  document.getElementById('pir').textContent=v.interaction_rate+'%';
+  document.getElementById('ptitle').textContent=v.title;
+  document.getElementById('prow').innerHTML=[
+    ['点赞',d2(s.like)],['投币',d2(s.coin)],['收藏',d2(s.favorite)],['转发',d2(s.share)],
+  ].map(([k,val])=>`<span>${k}<b>${val}</b></span>`).join('');
+  document.getElementById('pfoot').textContent='';
+}).catch(()=>{});
+</script>
+</body></html>

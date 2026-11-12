@@ -1,0 +1,31 @@
+{
+ "mid": 196461589,
+ "name": "计算机小天使",
+ "sign": "传播计算机相关知识，分享所学所思，让世界变得更美好",
+ "fans": 79,
+ "following": 39,
+ "updated": "2026-11-12 10:19:13",
+ "videos": [
+  {
+   "bvid": "BV17A411m7yd",
+   "aid": 309768291,
+   "title": "解决windows下任务栏消失问题",
+   "desc": "大噶好，给大家介绍一下如何重置windows浏览器",
+   "duration": 45,
+   "pubdate": 1677081386,
+   "pic": "assets/cover.webp",
+   "stat": {
+    "view": 167839,
+    "danmaku": 168,
+    "reply": 982,
+    "favorite": 1468,
+    "coin": 1666,
+    "share": 1081,
+    "like": 3279
+   },
+   "url": "https://www.bilibili.com/video/BV17A411m7yd",
+   "interaction_rate": 4.46
+  }
+ ],
+ "face_local": "assets/avatar.webp"
+}
